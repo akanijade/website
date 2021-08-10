@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+    <title>MY WEBSITE</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h3>Giani Kurniawan</h3>
+            <!-- <img src=google.jpg alt="logo"> -->
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+
+        <!-- <div class="container">   -->
+        <nav class="nav"> 
+            <ul class="nav__list">
+                <!-- <li class="nav__item"><a href="#" class>Giani Kurniawan</a></li> -->
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+                <li class="nav__item"><a href="#project" class="nav__link">Project</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="resume.pdf" class="nav__link" target="blank">Resume</a></li>
+            </ul>
+        </nav>
+        <!-- </div> -->
+    </header>
+
+    <!-- Intro-->
+    <section class="intro" id="home">
+        
+        <h1 class="section__title section__title--intro">
+            Hi, this is <span>my website</span>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Data Science Student</p>
+        <img src="giani.jpg" alt="a picture of Giani" class="intro__img">
+    </section>
+
+    <!--My Education-->
+
+    <section class="my-education" id="education">
+        <h2 class="section__title section__title--education">My Education</h2>
+        <div class="education">
+            <div class="school">
+                <h3>University of California, Berkeley</h3>
+                <p>I am a Data Science student at UC Berkeley. My domain emphasis is Bussiness and Industrial Analytics.</p>
+            </div> <!--school one-->
+
+            <div class="school">
+                <h3>Ohlone College</h3>
+                <p>Associates's of Computer Science and Mathematics with Highest Honors.</p>
+            </div> <!--school two-->
+
+        </div>
+        <!-- <a href="#work" class="btn">My Work</a> -->
+    </section>
+
+    <!-- About Me-->
+
+    <section class="about-me" id="about">
+        
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about">International student from Jakarta, Indonesia</p>
+        <div clas="about-me__body">
+            <p>I am an international student looking for an internship and job opportunities. 
+                I love playing video games in my leisure time and watch movies or TV shows. 
+                My favorite games are Valorant and League of Legends. 
+                I love hanging out with my friends and finding new connections.</p>
+            <p> I love EDM and pop music.</p>
+        </div>
+
+        <img src="about-me.jpg" alt="pic of giani" class="about-me__img">
+    </section>
+
+    <!--My Projects-->
+
+    <section class="my-projects" id="project">
+        <h2 class="section__title section__title--project">My Projects</h2>
+        <h3 class="section__subtitle section__subtitle--project">Personal & School projects</h3>
+
+        <div class="portfolio">
+            <!--Project 1-->
+            <a href="https://github.com/akanijade/disc-bot" class="portfolio__item">
+                <h1>Discord Bot</h1>
+                <img src="disc-bot.jpg" alt="discord bot" class="portfolio__img">
+                <p class="section__subtitle section__subtitle-project">Created a bot in Python that would respond to negative messages 
+                    with an inspiring quote utilizing Repl.it DB database, discord.py, 
+                    OS, requests, json, and random that runs 24 hours with UptimeRobot 
+                    and a script that pings the server.
+                    </p>
+                    <p class="section__subtitle section__subtitle-project">Implemented object-oriented programming, 
+                        YouTube-dl, asyncio, FFmpeg to add a music feature 
+                        that allows the bot to play, pause, resume, and stop 
+                        music when title or URL is given.
+                    </p>
+            </a>
+
+            <!--Project 2-->
+            <a href="https://github.com/akanijade/Ants-vs-Bees" class="portfolio__item">
+                <h1>Ants Vs Bees</h1>
+                <img src="ants.png" alt="ants-vs-bees" class="portfolio__img">
+                <p class="section__subtitle section__subtitle-project">Built a tower defense game in Python where the different types 
+                of ants protect the queen from bees. PopCap’s Plants vs. 
+                Zombies inspired the game.
+                </p>
+                <p class="section__subtitle section__subtitle-project">Implemented functional and object-oriented programming 
+                models and testing large programs.
+                </p>
+            </a>
+
+            <!--Project 3-->
+            <a href="https://github.com/akanijade/the-power-of-data" class="portfolio__item">
+                <h1>Power of Data</h1>
+                <img src="data.png" alt="" class="portfolio__img">
+                <p class="section__subtitle section__subtitle-project">Utilized NumPy for table manipulations and visualizations to help 
+                biologists analyze data of specific cells in our lungs that are 
+                associated with the disease cystic fibrosis.
+                </p>
+                <p class="section__subtitle section__subtitle-project">Utilized NumPy for table 
+                manipulations and visualizations to help biologists analyze data of 
+                specific cells in our lungs that are associated with the disease cystic fibrosis.</p>
+            </a>
+
+            <!--Project 4-->
+            <a href="#" class="portfolio__item">
+                <h1>Portfolio Website</h1>
+                <img src="website.PNG" alt="website" class="portfolio__img">
+                <p class="section__subtitle section__subtitle-project">Utilize HTML and CSS to create a portfolio website</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer">
+        <a href="mailto:giani.k@berkeley.edu" class="footer__link">giani.k@berkeley.edu</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/giani-kurniawan-102465194/">
+                    <i class="fab fa-linkedin"></i>      
+                </a>
+            </li>
+            
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/akanijade">
+                <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.facebook.com/giani.ranjani/">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/gianiranjani/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+/* custom styles */
+:root{
+    /* --font--color: "DarkBlue"; */
+    --font-primary: 'Source Sans Pro', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-accent: #64a6db;
+    --clr-dark: #03427e;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+
+@media (min-width: 800px) {
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* html{
+    box-sizing: border-box;
+} */
+
+/* General style */
+body{ 
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    line-height: 1.6; 
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    
+}
+
+section{
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 50%;
+}
+
+span { font-weight: var(--fw-bold) }
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+
+}
+h1 { font-size: var(--fs-h1)}
+h2 { font-size: var(--fs-h2)}
+h3 { font-size: var(--fs-h3)}
+
+.section__title{
+    margin-bottom: .25em;
+}
+
+.section__title--intro{
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro span{
+    display: block;
+
+}
+.section__subtitle{
+    margin:0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitile--about{
+    background: var(--clr-accent);
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em; 
+    padding: .25em;
+}
+
+/* header */
+nav { display: none}
+
+/* Intro section */
+
+.intro{
+    position: relative;
+
+}
+.intro__img{
+    box-shadow: var(--bs);
+
+}
+.section__subtitile--intro{
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        /* position: absolute; */
+        z-index: 2;
+
+
+    }
+
+    .section__subtitile--intro{
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+
+    }
+}
+
+/* My Education */
+
+.my-education {
+    background-color: var(--clr-dark);
+    background-image: url(berkeley-bg.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-light);
+}
+/* .nav{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 5px 5px;
+    height: 10px 10px;
+    width: 100%;
+} */
+.nav{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    
+    /* border: 1px solid #f00; */
+}
+.navList{
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    
+}
+.navList li{
+    /* display: inline-block;
+    list-style-type: none;*/
+    margin: 0 5px; 
+    display: inline;
+    width: 100px;
+    height: 20px;
+    /* border: 1px solid #000; */
+    text-align: left;
+}  
+/* .navList li:first-child{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}         */
+
+.navList li.name {
+    position: absolute;
+    left: 5px;
+    min-width: 200px;
+    /* width: 100px; */
+    /* max-width: 20px; */
+    /* float: none; */
+    /* overflow: auto; */
+}
+.navList a{
+    
+    line-height: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 10px;
+    text-align: center;
+    width: 100px; 
+    margin-bottom: 10px;
+    color: #033c6b;
+    -webkit-text-stroke: 1px #09576e;
+} 
+

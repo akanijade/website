@@ -85,6 +85,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title--intro span {
     display: block;
+    white-space:nowrap;
 }
 
 .section__subtitle {

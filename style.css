@@ -48,6 +48,7 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    padding-top: 3.5em; /* Adjust this to the height of your fixed header */
 }
 
 section {
@@ -122,6 +123,12 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    position: fixed;  /* Keep header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;  /* Ensure the header is always on top */
+    background: var(--clr-light);  /* Optional: ensures background for readability */
 }
 
 /* .logo{
@@ -134,11 +141,11 @@ header{
     color: var(--clr-light);
     top: 0;
     bottom: 0;
-    right: 0;
-    z-index: 100;
+    right: 0;/* Make sure the nav is aligned to the right */
+    z-index: 100;/* Keep the nav on top of other content */
     width: 250px;
 
-    transform: translateX(100%); 
+    transform: translateX(100%); /* Hide off-screen initially */
     transition: transform 250ms cubic-bezier(.5, 0, .5, 0);
 
 }
@@ -148,10 +155,12 @@ header{
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: flex-start;  /* Align items at the top */
     align-items: center;
     margin: 0;
     padding: 0;
+    height: 100%; /*Makes sure the height of the list takes up the full height of the menu.*/
 }
 
 .nav__link {
@@ -178,7 +187,7 @@ header{
     position: absolute;
     right: 1em;
     top: 1em;
-    z-index: 1000;
+    z-index: 1000; /* Ensures it stays clickable and on top */
 }
 
 .nav-open .nav{

@@ -346,6 +346,9 @@ header{
         position: relative;
         z-index: 2;
     }
+    .nav__link {
+        font-size: 1.25rem; /* Smaller text on smaller screens */
+    }
 }
 
 /* My Projects */

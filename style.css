@@ -139,7 +139,7 @@ header{
     position: fixed;
     background: var(--clr-dark);
     color: var(--clr-light);
-    top: 0;
+    top: 3.5em; /* Place it below the hamburger button */
     bottom: 0;
     right: 0;/* Make sure the nav is aligned to the right */
     z-index: 100;/* Keep the nav on top of other content */
@@ -160,7 +160,7 @@ header{
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 100%; /*Makes sure the height of the list takes up the full height of the menu.*/
+    height: auto;/* No need to fill the whole height */
 }
 
 .nav__link {
@@ -170,9 +170,11 @@ header{
     font-size: 1.5rem;  /* Smaller font size to fit within the partial menu */
     /*font-size: var(--fs-h2); */
     text-decoration: none;
-    padding: 1em 0; /* Adjust padding to make the links more compact */
+    /*padding: 1em 0; /* Adjust padding to make the links more compact */ */
     width: 100%; /* Ensure the link takes up the full width of the menu */
     text-align: center;  /* Center-align text */
+    padding: 1em 2em; /* Add padding to make links easier to click */
+    display: block;  /* Ensure the links take full width for better alignment */
 }
 
 .nav__link:hover {

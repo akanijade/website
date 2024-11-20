@@ -158,8 +158,12 @@ header{
     /* list-style: none; */
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
+    font-size: 1.5rem;  /* Smaller font size to fit within the partial menu */
+    /*font-size: var(--fs-h2); */
     text-decoration: none;
+    padding: 1em 0; /* Adjust padding to make the links more compact */
+    width: 100%; /* Ensure the link takes up the full width of the menu */
+    text-align: center;  /* Center-align text */
 }
 
 .nav__link:hover {

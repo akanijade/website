@@ -346,10 +346,23 @@ header{
     margin: 0 auto;
 }
 
-.about-me__img{
+/* .about-me__img{
     box-shadow: var(--bs);
-}
+} */
+
 @media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "title"
+            "subtitle"
+            "text";
+        grid-column-gap: 0;
+    }
+
+
+/* @media (min-width: 600px) {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
@@ -358,10 +371,9 @@ header{
             "subtitle img"
             "text img";
         grid-column-gap: 2em;
-    }
+    } */
     .section__title--about{
         grid-area: title;
-
     }
 
     .section__subtitle--about{
@@ -373,12 +385,14 @@ header{
         padding-left: 2em;
         padding-right: calc(200px+2em);
     }
-
-    .about-me__img{
+    section {
+    padding: 5em 2em;
+}
+/*     .about-me__img{
         grid-area: img;
         position: relative;
         z-index: 2;
-    }
+    } */
     .nav__link {
         font-size: 1.25rem; /* Smaller text on smaller screens */
     }
@@ -485,6 +499,7 @@ header{
 .social-list__link {
     padding: 0.5em;
 }
+
 
 
 

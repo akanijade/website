@@ -256,7 +256,7 @@ header{
     display: inline-block;
 }
 
-/* @media (min-width: 600px) {
+@media (min-width: 600px) {
     .about-me {
         display: grid;
         grid-template-columns: 1fr;
@@ -277,7 +277,7 @@ header{
         width: 100%;
         padding: 0;
     }
-} */
+}
 
 /* My Education */
 
@@ -457,5 +457,6 @@ header{
 .social-list__link {
     padding: 0.5em;
 }
+
 
 

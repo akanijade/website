@@ -257,6 +257,29 @@ header{
 }
 
 @media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "title"
+            "subtitle"
+            "text";
+        grid-column-gap: 0; /* optional */
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-area: subtitle;
+        left: 0;
+        width: 100%;
+        padding: 0;
+    }
+}
+/* If has image
+@media (min-width: 600px) {
     .intro {
         display: grid;
         width: min-content;
@@ -285,7 +308,7 @@ header{
         width: calc(100% + 1.5em);
     }
 }
-/* My Education */
+/* My Education */ */
 
 .my-education {
     background-color: var(--clr-dark);
@@ -463,3 +486,4 @@ header{
 .social-list__link {
     padding: 0.5em;
 }
+

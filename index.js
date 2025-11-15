@@ -15,7 +15,9 @@ navLinks.forEach(link => {
     });
 });
 
-// Scroll reveal
+// =========================
+// SCROLL REVEAL
+// =========================
 const reveals = document.querySelectorAll('.reveal');
 
 function revealOnScroll() {
@@ -24,7 +26,6 @@ function revealOnScroll() {
 
     reveals.forEach(reveal => {
         const revealTop = reveal.getBoundingClientRect().top;
-
         if(revealTop < windowHeight - revealPoint) {
             reveal.classList.add('active');
         } else {
@@ -34,9 +35,7 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-
-// Trigger once in case some elements are already in view on load
-revealOnScroll();
+revealOnScroll(); // Trigger once on load
 
 // =========================
 // STICKY HEADER ON SCROLL
@@ -50,7 +49,6 @@ window.addEventListener('scroll', () => {
         header.classList.remove('sticky');
     }
 
-    // Update active link
     updateActiveLink();
 });
 
@@ -65,7 +63,7 @@ function updateActiveLink() {
     while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
     
     navLinks.forEach(link => link.classList.remove('active'));
-    navLinks[index].classList.add('active');
+    if(navLinks[index]) navLinks[index].classList.add('active');
 }
 
 // =========================
@@ -73,11 +71,11 @@ function updateActiveLink() {
 // =========================
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('img') : null;
 
-    if (!themeToggleBtn || !themeIcon) return; // stop if button or icon doesn't exist
+    if (!themeToggleBtn || !themeIcon) return;
 
-    // Load saved theme on page load
+    // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
         themeIcon.src = 'moon-icon.svg';
@@ -85,19 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.src = 'sun-icon.svg';
     }
 
-    // Toggle theme on click
+    // Toggle theme
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
-
-        if (document.body.classList.contains('dark-theme')) {
-            themeIcon.src = 'moon-icon.svg';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeIcon.src = 'sun-icon.svg';
-            localStorage.setItem('theme', 'light');
-        }
+        const isDark = document.body.classList.contains('dark-theme');
+        themeIcon.src = isDark ? 'moon-icon.svg' : 'sun-icon.svg';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 });
-
-
-

@@ -476,29 +476,10 @@ body.dark-theme .footer {
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
-.nav__item .theme-toggle {
-    width: auto;           /* don’t stretch full width */
-    padding: 0.25em;       /* small padding around the icon */
-    display: inline-flex;   /* shrink to fit icon */
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: transparent;
-}
-
-
-.theme-toggle:hover {
-    background: var(--clr-dark);
-}
-
 .theme-toggle .theme-icon {
-    width: 1.5em;   /* proportional to button size */
-    height: 1.5em;
-}
-.theme-toggle {
-    height: 3em;   /* same as nav link height if nav__link padding is 1em 2em */
-    width: auto;
-    padding: 0 1em;
+    width: 24px;   /* set fixed width */
+    height: 24px;  /* set fixed height */
+    display: block;
 }
 
 

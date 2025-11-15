@@ -62,16 +62,28 @@ function updateActiveLink() {
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
-const themeToggle = document.querySelector('.theme-toggle');
+// Wait until the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the toggle button
+    const toggle = document.querySelector('.theme-toggle');
 
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
+    // Add a click event listener to toggle dark mode
+    toggle.addEventListener('click', () => {
+        // Toggle the class 'dark-theme' on <body>
+        document.body.classList.toggle('dark-theme');
 
-    // Optional: change icon
-    const icon = themeToggle.querySelector('.theme-icon');
-    if (document.body.classList.contains('dark-theme')) {
-        icon.src = 'sun-icon.svg'; // replace with sun icon path
-    } else {
-        icon.src = 'moon-icon.svg'; // replace with moon icon path
+        // Optional: save the user's preference in localStorage
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Optional: load saved theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
     }
 });
+

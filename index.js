@@ -71,8 +71,6 @@ function updateActiveLink() {
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
-const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('img') : null;
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
 
-        if(document.body.classList.contains('dark-theme')) {
+        if (document.body.classList.contains('dark-theme')) {
             themeIcon.src = 'moon-icon.svg';
             localStorage.setItem('theme', 'dark');
         } else {
@@ -100,5 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 

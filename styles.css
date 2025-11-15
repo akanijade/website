@@ -222,11 +222,18 @@ header {
 .nav-open .hamburger::after {
     opacity: 0;
 }
+
 .theme-toggle {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 0;               /* remove padding */
+    margin: 0;                /* remove margin */
+    width: 32px;              /* fixed size */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-toggle img {
@@ -234,7 +241,6 @@ header {
     height: 24px;
     display: block;
 }
-
 
 .theme-toggle:focus {
     outline: none;         /* remove focus outline */

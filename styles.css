@@ -227,6 +227,11 @@ header {
 .nav-open .hamburger::after {
     opacity: 0;
 }
+.nav__item:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* =========================
    INTRO SECTION
@@ -476,10 +481,24 @@ body.dark-theme .footer {
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
-.theme-toggle .theme-icon {
-    width: 24px;   /* set fixed width */
-    height: 24px;  /* set fixed height */
-    display: block;
+body.dark-theme .theme-icon {
+    filter: invert(1);  /* simple trick for monochrome SVG */
 }
 
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;                /* remove default padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;              /* match roughly the hamburger */
+    height: 2.5em;
+}
+
+.theme-toggle .theme-icon {
+    width: 1.5em;               /* scale icon to fit button */
+    height: 1.5em;
+}
 

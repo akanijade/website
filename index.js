@@ -4,9 +4,11 @@
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 
-navToggle.addEventListener('click', () => {
-    document.body.classList.toggle('nav-open');
-});
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
+    });
+}
 
 // =========================
 // SCROLL REVEAL
@@ -33,54 +35,53 @@ revealOnScroll(); // Trigger once on load
 // =========================
 // STICKY HEADER ON SCROLL
 // =========================
-const headerOffset = header.offsetTop;
+const header = document.querySelector('header');
+const headerOffset = header ? header.offsetTop : 0;
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > headerOffset) {
-        header.classList.add('sticky');
-    } else {
-        header.classList.remove('sticky');
+    if (header) {
+        if (window.scrollY > headerOffset) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
     }
 
     updateActiveLink();
 });
 
+
 // =========================
 // ACTIVE LINK HIGHLIGHTING
 // =========================
 const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav a');
 
 function updateActiveLink() {
     let index = sections.length;
 
     while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
-    
+
     navLinks.forEach(link => link.classList.remove('active'));
     if(navLinks[index]) navLinks[index].classList.add('active');
 }
-
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
 // Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the toggle button
     const toggle = document.querySelector('.theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem(
+                'theme',
+                document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+            );
+        });
+    }
 
-    // Add a click event listener to toggle dark mode
-    toggle.addEventListener('click', () => {
-        // Toggle the class 'dark-theme' on <body>
-        document.body.classList.toggle('dark-theme');
-
-        // Optional: save the user's preference in localStorage
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
-    // Optional: load saved theme on page load
+    // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');

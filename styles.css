@@ -433,9 +433,36 @@ body.dark-theme {
     color: #eee;
 }
 
+body.dark-theme header {
+    background: #222; /* dark header */
+}
+
+body.dark-theme .nav {
+    background: rgba(34, 34, 34, 0.95); /* dark nav */
+}
+
+body.dark-theme .nav__link {
+    color: #eee;
+}
+
+body.dark-theme .nav__link:hover,
+body.dark-theme .nav__link.active {
+    color: var(--clr-accent);
+}
+
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
+
+body.dark-theme .footer {
+    background-color: #222;
+    color: var(--clr-accent);
+}
+
+body.dark-theme .portfolio__item::after {
+    background: rgba(0,0,0,0.5); /* a bit darker overlay */
+}
+
 /* Scroll reveal */
 .reveal {
     opacity: 0;

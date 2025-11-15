@@ -223,19 +223,23 @@ header {
     opacity: 0;
 }
 .theme-toggle {
-    background: none;      /* remove default background */
-    border: none;          /* remove border */
-    padding: 0;            /* remove extra space */
-    cursor: pointer;       /* show pointer on hover */
-    display: flex;         /* center icon if needed */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0;
+    margin: 0;
 }
 
+
 .theme-toggle img {
-    width: 24px;           /* adjust icon size */
+    display: block;
+    width: 24px;   /* or 1.5em for scaling */
     height: 24px;
+    object-fit: contain;   /* ensures it scales properly */
 }
+
 .theme-toggle:focus {
     outline: none;         /* remove focus outline */
 }

@@ -223,22 +223,18 @@ header {
     opacity: 0;
 }
 .theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5em;
-    height: 2.5em;
-    padding: 0;
-    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }
-
 
 .theme-toggle img {
-    display: block;
-    width: 24px;   /* or 1.5em for scaling */
+    width: 24px;
     height: 24px;
-    object-fit: contain;   /* ensures it scales properly */
+    display: block;
 }
+
 
 .theme-toggle:focus {
     outline: none;         /* remove focus outline */

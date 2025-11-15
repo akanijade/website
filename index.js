@@ -83,9 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.src = 'sun-icon.svg';
     }
 
-    // Toggle theme
+    // Toggle theme on click
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
+
         const isDark = document.body.classList.contains('dark-theme');
         themeIcon.src = isDark ? 'moon-icon.svg' : 'sun-icon.svg';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');

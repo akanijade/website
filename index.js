@@ -71,22 +71,25 @@ function updateActiveLink() {
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
-const themeToggleBtn = document.querySelector('.theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('.theme-icon');
 
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
 
-        // Save preference to localStorage
-        if(document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
+    if(document.body.classList.contains('dark-theme')) {
+        themeIcon.src = 'moon-icon.svg'; // dark mode icon
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.src = 'sun-icon.svg'; // light mode icon
+        localStorage.setItem('theme', 'light');
     }
+});
+
+// On load, set correct icon
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeIcon.src = 'moon-icon.svg';
+} else {
+    themeIcon.src = 'sun-icon.svg';
 }
+

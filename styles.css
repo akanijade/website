@@ -471,21 +471,30 @@ body.dark-theme .footer {
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
-/* Theme toggle button */
 .theme-toggle {
-    background: none;       /* remove white box */
-    border: none;           /* remove default button border */
-    padding: 4px;           /* optional padding */
+    background: var(--clr-accent); /* optional: give it a visible color */
+    border: none;
+    border-radius: 0.25em; /* same radius as other elements if needed */
+    padding: 0.5em 1em;    /* larger, proportional padding */
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s;
 }
 
-/* Icon inside the button */
-.theme-toggle .theme-icon {
-    width: 24px;   /* shrink to 24px */
-    height: 24px;
-    display: block;
+.theme-toggle:hover {
+    background: var(--clr-dark);
 }
+
+.theme-toggle .theme-icon {
+    width: 1.5em;   /* proportional to button size */
+    height: 1.5em;
+}
+.theme-toggle {
+    height: 3em;   /* same as nav link height if nav__link padding is 1em 2em */
+    width: auto;
+    padding: 0 1em;
+}
+
 

@@ -2,17 +2,10 @@
 // NAVIGATION TOGGLE
 // =========================
 const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link');
-const header = document.querySelector('header');
+const nav = document.querySelector('.nav');
 
 navToggle.addEventListener('click', () => {
     document.body.classList.toggle('nav-open');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        document.body.classList.remove('nav-open');
-    });
 });
 
 // =========================
@@ -69,32 +62,16 @@ function updateActiveLink() {
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
+const themeToggle = document.querySelector('.theme-toggle');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.querySelector('.theme-toggle');
-    const themeIcon = document.querySelector('.theme-toggle .theme-icon');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
 
-    if (!themeToggleBtn) return;
-
-    // Function to apply theme
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-theme');
-            if (themeIcon) themeIcon.src = 'moon-icon.svg';
-        } else {
-            document.body.classList.remove('dark-theme');
-            if (themeIcon) themeIcon.src = 'sun-icon.svg';
-        }
-        localStorage.setItem('theme', theme);
+    // Optional: change icon
+    const icon = themeToggle.querySelector('.theme-icon');
+    if (document.body.classList.contains('dark-theme')) {
+        icon.src = 'sun-icon.svg'; // replace with sun icon path
+    } else {
+        icon.src = 'moon-icon.svg'; // replace with moon icon path
     }
-
-    // Load saved theme or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
-
-    // Toggle theme on button click
-    themeToggleBtn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark-theme');
-        applyTheme(isDark ? 'dark' : 'light');
-    });
 });

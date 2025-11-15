@@ -167,6 +167,11 @@ header {
     padding: 1em 2em;
     display: block;
 }
+.nav__link img {
+    max-width: 1em;
+    height: auto;
+    vertical-align: middle;
+}
 
 .nav__link:hover,
 .nav__link.active {

@@ -71,7 +71,7 @@ function updateActiveLink() {
 // =========================
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('img') : null;
+    const themeIcon = document.querySelector('.theme-toggle .theme-icon');
 
     if (!themeToggleBtn || !themeIcon) return;
 

@@ -436,3 +436,14 @@ body.dark-theme {
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

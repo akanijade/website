@@ -222,6 +222,23 @@ header {
 .nav-open .hamburger::after {
     opacity: 0;
 }
+.theme-toggle {
+    background: none;      /* remove default background */
+    border: none;          /* remove border */
+    padding: 0;            /* remove extra space */
+    cursor: pointer;       /* show pointer on hover */
+    display: flex;         /* center icon if needed */
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle img {
+    width: 24px;           /* adjust icon size */
+    height: 24px;
+}
+.theme-toggle:focus {
+    outline: none;         /* remove focus outline */
+}
 
 /* =========================
    INTRO SECTION

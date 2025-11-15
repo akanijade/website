@@ -71,6 +71,8 @@ function updateActiveLink() {
 // =========================
 // DARK/LIGHT THEME TOGGLE
 // =========================
+const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('img') : null;
+
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;

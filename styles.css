@@ -476,17 +476,16 @@ body.dark-theme .footer {
 body.dark-theme .section__subtitle--intro {
     background: #444;
 }
-.theme-toggle {
-    background: var(--clr-accent); /* optional: give it a visible color */
-    border: none;
-    border-radius: 0.25em; /* same radius as other elements if needed */
-    padding: 0.5em 1em;    /* larger, proportional padding */
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
+.nav__item .theme-toggle {
+    width: auto;           /* don’t stretch full width */
+    padding: 0.25em;       /* small padding around the icon */
+    display: inline-flex;   /* shrink to fit icon */
     justify-content: center;
-    transition: background 0.3s;
+    align-items: center;
+    border: none;
+    background: transparent;
 }
+
 
 .theme-toggle:hover {
     background: var(--clr-dark);
